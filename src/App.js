@@ -20,9 +20,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <NavBar />
+        <header className="App-header"> 
         </header>
+        <body className="chart-body">
+          <NavBar />
+        </body>
       </div>
     );
   }

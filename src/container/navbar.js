@@ -58,7 +58,9 @@ class NavBar extends Component {
             <Icon type="appstore" />Caption Prediction
           </Menu.Item>
         </Menu>
-        <ExploratoryDashboard />
+        <div id="review">
+          <ExploratoryDashboard />
+        </div>
         </div>
       )
     } else if (this.state.current === "insights") {

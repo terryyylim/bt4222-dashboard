@@ -1,15 +1,30 @@
 import React,  { Component } from 'react';
 
-// import chart components
-import PhoneStrengths from '../components/exploratory/phone_strengths'
+// import components
+import PhoneStrengths from './exploratory/phone_strengths'
+import PhoneWeaknesses from './exploratory/phone_weaknesses';
+
+// import styling from antd
+import { Card } from 'antd';
 
 class ExploratoryDashboard extends Component {
   render() {
     return(
       <div>
-        ExploratoryDashboard
-        <div id="reviews">
-          <PhoneStrengths />
+        <div className="chart-display col-sm-4">
+        <Card title="Phone Strengths" style={{ width: 600 }}>
+          <p>
+            <PhoneStrengths />
+          </p>
+        </Card>
+        </div>
+
+        <div className="chart-display col-sm-4">
+        <Card title="Phone Weaknesses" style={{ width: 600 }}>
+          <p>
+            <PhoneWeaknesses />
+          </p>
+        </Card>
         </div>
       </div>
     )

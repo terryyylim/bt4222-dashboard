@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: white;
   color: white;
 }
 
@@ -18,6 +18,21 @@
 
 .App-intro {
   font-size: large;
+}
+
+.chart-body {
+  background-color: white;
+}
+
+.chart-display{
+  width: 500px;
+  height: 300px;
+  margin: 20px;
+  float: left;
+}
+
+.clear {
+  clear: both;
 }
 
 @keyframes App-logo-spin {
