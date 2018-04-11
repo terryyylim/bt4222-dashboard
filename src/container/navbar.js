@@ -32,8 +32,8 @@ class NavBar extends Component {
             style={{ lineHeight: '50px' }}
             mode="horizontal"
           >
-          <Menu.Item>
-            <Icon type="shake" disabled /> Phoneylytics
+        <Menu.Item key="menu">
+            <Icon type="shake"  /> Phoneylytics
           </Menu.Item>
           <Menu.Item key="exploratory">
             <Icon type="appstore" />Exploratory
@@ -42,7 +42,7 @@ class NavBar extends Component {
             <Icon type="dot-chart" />Modeling Insights
           </Menu.Item>
           <Menu.Item key="caption">
-            <Icon type="ellipsis" />Caption Prediction
+            <Icon type="bar-chart" />Caption Prediction
           </Menu.Item>
           </Menu>
         </span>
@@ -57,8 +57,8 @@ class NavBar extends Component {
           style={{ lineHeight: '50px' }}
           mode="horizontal"
         >
-        <Menu.Item>
-          <Icon type="shake" disabled /> Phoneylytics
+        <Menu.Item key="menu">
+          <Icon type="shake"  /> Phoneylytics
         </Menu.Item>
           <Menu.Item key="exploratory">
             <Icon type="appstore" />Exploratory
@@ -67,7 +67,7 @@ class NavBar extends Component {
             <Icon type="dot-chart" />Modeling Insights
           </Menu.Item>
           <Menu.Item key="caption">
-            <Icon type="ellipsis" />Caption Prediction
+            <Icon type="bar-chart" />Caption Prediction
           </Menu.Item>
         </Menu>
         <div id="review">
@@ -85,8 +85,8 @@ class NavBar extends Component {
           style={{ lineHeight: '50px' }}
           mode="horizontal"
         >
-        <Menu.Item>
-          <Icon type="shake" disabled /> Phoneylytics
+        <Menu.Item key="menu">
+          <Icon type="shake"  /> Phoneylytics
         </Menu.Item>
         <Menu.Item key="exploratory">
           <Icon type="appstore" />Exploratory
@@ -95,7 +95,7 @@ class NavBar extends Component {
           <Icon type="dot-chart" />Modeling Insights
         </Menu.Item>
         <Menu.Item key="caption">
-          <Icon type="ellipsis" />Caption Prediction
+          <Icon type="bar-chart" />Caption Prediction
         </Menu.Item>
         </Menu>
         <InsightsDashboard />
@@ -111,8 +111,8 @@ class NavBar extends Component {
           style={{ lineHeight: '50px' }}
           mode="horizontal"
         >
-        <Menu.Item>
-          <Icon type="shake" disabled /> Phoneylytics
+        <Menu.Item key="menu">
+          <Icon type="shake"  /> Phoneylytics
         </Menu.Item>
         <Menu.Item key="exploratory">
           <Icon type="appstore" />Exploratory
@@ -121,7 +121,7 @@ class NavBar extends Component {
           <Icon type="dot-chart" />Modeling Insights
         </Menu.Item>
         <Menu.Item key="caption">
-          <Icon type="ellipsis" />Caption Prediction
+          <Icon type="bar-chart" />Caption Prediction
         </Menu.Item>
         </Menu>
         <PredictCaptionDashboard />

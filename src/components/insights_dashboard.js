@@ -13,17 +13,13 @@ class InsightsDashboard extends Component {
       <div>
         <div className="chart-display col-sm-4">
         <Card title="Phone Weaknesses" style={{ width: 600 }}>
-          <p>
             <PhoneWeaknesses />
-          </p>
         </Card>
         </div>
 
         <div className="chart-display col-sm-4">
         <Card title="Phone Weaknesses" style={{ width: 600 }}>
-          <p>
             <PhoneWeaknesses />
-          </p>
         </Card>
         </div>
       </div>

@@ -19,16 +19,12 @@ class ExploratoryDashboard extends Component {
       <Row gutter={12}>
         <Col {...colProps} >
         <Card title="Phone Strengths">
-          <p>
             <PhoneStrengths />
-          </p>
         </Card>
         </Col>
         <Col {...colProps}  >
         <Card title="Phone Weaknesses">
-          <p>
             <PhoneWeaknesses />
-          </p>
         </Card>
         </Col>
         </Row>
