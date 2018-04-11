@@ -9,7 +9,7 @@ class NavBar extends Component {
     super(props);
 
     this.state = {
-      current: ''
+      current: 'exploratory'
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -24,38 +24,50 @@ class NavBar extends Component {
   render() {
     if (this.state.current === "") {
       return(
-        <Menu
-          onClick={this.handleClick}
-          selectedKeys={[this.state.current]}
-          mode="horizontal"
-        >
+        <span>
+          <Menu
+            theme="dark"
+            onClick={this.handleClick}
+            defaultSelectedKeys={['exploratory']}
+            style={{ lineHeight: '50px' }}
+            mode="horizontal"
+          >
+          <Menu.Item>
+            <Icon type="shake" disabled /> Phoneylytics
+          </Menu.Item>
           <Menu.Item key="exploratory">
-            <Icon type="mail" />Exploratory
+            <Icon type="appstore" />Exploratory
           </Menu.Item>
           <Menu.Item key="insights">
-            <Icon type="appstore" />Modeling Insights
+            <Icon type="dot-chart" />Modeling Insights
           </Menu.Item>
           <Menu.Item key="caption">
-            <Icon type="appstore" />Caption Prediction
+            <Icon type="ellipsis" />Caption Prediction
           </Menu.Item>
-        </Menu>
+          </Menu>
+        </span>
       )
     } else if (this.state.current === "exploratory") {
       return(
         <div>
         <Menu
+          theme="dark"
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
+          style={{ lineHeight: '50px' }}
           mode="horizontal"
         >
+        <Menu.Item>
+          <Icon type="shake" disabled /> Phoneylytics
+        </Menu.Item>
           <Menu.Item key="exploratory">
-            <Icon type="mail" />Exploratory
+            <Icon type="appstore" />Exploratory
           </Menu.Item>
           <Menu.Item key="insights">
-            <Icon type="appstore" />Modeling Insights
+            <Icon type="dot-chart" />Modeling Insights
           </Menu.Item>
           <Menu.Item key="caption">
-            <Icon type="appstore" />Caption Prediction
+            <Icon type="ellipsis" />Caption Prediction
           </Menu.Item>
         </Menu>
         <div id="review">
@@ -67,19 +79,24 @@ class NavBar extends Component {
       return(
         <div>
         <Menu
+          theme="dark"
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
+          style={{ lineHeight: '50px' }}
           mode="horizontal"
         >
-          <Menu.Item key="exploratory">
-            <Icon type="mail" />Exploratory
-          </Menu.Item>
-          <Menu.Item key="insights">
-            <Icon type="appstore" />Modeling Insights
-          </Menu.Item>
-          <Menu.Item key="caption">
-            <Icon type="appstore" />Caption Prediction
-          </Menu.Item>
+        <Menu.Item>
+          <Icon type="shake" disabled /> Phoneylytics
+        </Menu.Item>
+        <Menu.Item key="exploratory">
+          <Icon type="appstore" />Exploratory
+        </Menu.Item>
+        <Menu.Item key="insights">
+          <Icon type="dot-chart" />Modeling Insights
+        </Menu.Item>
+        <Menu.Item key="caption">
+          <Icon type="ellipsis" />Caption Prediction
+        </Menu.Item>
         </Menu>
         <InsightsDashboard />
         </div>
@@ -88,19 +105,24 @@ class NavBar extends Component {
       return(
         <div>
         <Menu
+          theme="dark"
           onClick={this.handleClick}
           selectedKeys={[this.state.current]}
+          style={{ lineHeight: '50px' }}
           mode="horizontal"
         >
-          <Menu.Item key="exploratory">
-            <Icon type="mail" />Exploratory
-          </Menu.Item>
-          <Menu.Item key="insights">
-            <Icon type="appstore" />Modeling Insights
-          </Menu.Item>
-          <Menu.Item key="caption">
-            <Icon type="appstore" />Caption Prediction
-          </Menu.Item>
+        <Menu.Item>
+          <Icon type="shake" disabled /> Phoneylytics
+        </Menu.Item>
+        <Menu.Item key="exploratory">
+          <Icon type="appstore" />Exploratory
+        </Menu.Item>
+        <Menu.Item key="insights">
+          <Icon type="dot-chart" />Modeling Insights
+        </Menu.Item>
+        <Menu.Item key="caption">
+          <Icon type="ellipsis" />Caption Prediction
+        </Menu.Item>
         </Menu>
         <PredictCaptionDashboard />
         </div>
