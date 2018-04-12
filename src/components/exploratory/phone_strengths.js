@@ -5,7 +5,6 @@ import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recha
 class PhoneStrengths extends Component {
 
   render() {
-    console.log(this.props.results);
     return(
       <BarChart width={800} height={300} data={this.props.results}>
         <CartesianGrid strokeDasharray="3 3" />

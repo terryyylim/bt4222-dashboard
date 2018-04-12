@@ -4,7 +4,7 @@ import axios from 'axios';
 // import components
 import PhoneStrengths from './exploratory/phone_strengths'
 import PhoneWeaknesses from './exploratory/phone_weaknesses';
-// import SentimentPostsOverTime from './exploratory/sentiment_post_over_time'
+import SentimentPostsOverTime from './exploratory/sentiment_post_over_time'
 
 // import styling components
 import { Row, Col, Card, Select } from 'antd';
@@ -22,7 +22,8 @@ class ExploratoryDashboard extends Component {
       brand: 'Samsung',
       models: [],
       phoneStrength: [],
-      PhoneWeakness: []
+      phoneWeakness: [],
+      postSentiment: []
     }
 
   handleBrandSelection = (value) => {
@@ -36,25 +37,33 @@ class ExploratoryDashboard extends Component {
   }
 
   handleModelSelection = (value) => {
-    console.log(value);
     this.getPhoneStrengthData(value);
     this.getPhoneWeaknessData(value);
+    this.getSentimentPostData(value);
   }
 
   getPhoneStrengthData = (value) => {
     axios.get(`http://localhost:5132/strengths/${encodeURIComponent(value)}/`)
     .then(response => {
       this.setState({phoneStrength: response.data});
-      console.log(response.data);
     })
   }
 
   getPhoneWeaknessData = (value) => {
     axios.get(`http://localhost:5132/weaknesses/${encodeURIComponent(value)}/`)
     .then(response => {
-      this.setState({PhoneWeakness: response.data});
+      this.setState({phoneWeakness: response.data});
     })
   }
+
+  getSentimentPostData = (value) => {
+    axios.get(`http://localhost:5132/sentiment-post/${encodeURIComponent(value)}/`)
+    .then(response => {
+      this.setState({postSentiment: response.data});
+    })
+  }
+
+
 
   render() {
     return(
@@ -72,6 +81,11 @@ class ExploratoryDashboard extends Component {
       }
       </Select>
       <br/>
+      <Col span={24}>
+      <Card title="Sentiment and Posts Over Time">
+          <SentimentPostsOverTime results={this.state.postSentiment}/>
+      </Card>
+      </Col>
       <Row gutter={12}>
         <Col {...colProps} >
         <Card title="Phone Strengths">
