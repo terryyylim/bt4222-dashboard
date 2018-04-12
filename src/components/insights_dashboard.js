@@ -11,7 +11,7 @@ import { blue50, blueA100, cyan500, deepOrange700 } from 'material-ui/styles/col
 var styles = {
   default_tab:{
     color: blue50,
-    backgroundColor: blueA100,
+    backgroundColor: "#031528",
     fontWeight: 400,
   },
   active_tab:{

@@ -9,7 +9,7 @@ class LandingPage extends Component {
     return(
       <div className="landing">
         <div className="centered">Phoneylytics
-          <div className="tagline">The Best Mobile Analytics Platform</div>
+          <div className="tagline">Powering Phone Analytics</div>
           <div className="landingbutton" onClick={this.goToDashboard}>Dashboard</div>
         </div>
       </div>

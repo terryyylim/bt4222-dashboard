@@ -9,7 +9,7 @@ class SentimentPostsOverTime extends Component {
       return{
         date: item.date,
         posts: item.posts,
-        sentiment: item.sentiment ? item.sentiment[1] * 200 : 0
+        sentiment: item.sentiment ? item.sentiment[1] * 100 : 0
       }
     });
     return(
