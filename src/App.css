@@ -31,6 +31,15 @@
   float: left;
 }
 
+.ant-card-head {
+  background-color: #87CEFA;
+}
+
+.body-bg {
+  background-color: seashell;
+  align-content: center;
+}
+
 .clear {
   clear: both;
 }
