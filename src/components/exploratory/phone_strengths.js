@@ -4,32 +4,10 @@ import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recha
 
 class PhoneStrengths extends Component {
 
-  state = {
-    model: 'Samsung Galaxy S7',
-    results: []
-  }
-
-  componentDidMount() {
-    axios.get('http://localhost:5132/strengths/' + encodeURIComponent(this.state.model))
-    .then(response => {
-      this.setState({results: response.data});
-    })
-  }
-
   render() {
-    const results= this.state.results;
-    // const sentiments = resultsData.map((sentiments) => {
-    //   return {
-    //     sentiments: sentiments[3]
-    //   };
-    // });
-    // const results = {
-    //   ...resultsData,
-    //   sentiments: sentiments
-    // };
-    //console.log(results);
+    console.log(this.props.results);
     return(
-      <BarChart width={800} height={300} data={results}>
+      <BarChart width={800} height={300} data={this.props.results}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="phrase" />
         <YAxis />

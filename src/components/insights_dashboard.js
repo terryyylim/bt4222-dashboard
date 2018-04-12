@@ -7,7 +7,7 @@ import AndroidCentralFeature from './insights/androidcentral_feature'
 import XdaFeature from './insights/xda_feature'
 
 // import styling components
-import { Menu, Dropdown, Button, Icon, Row, Col, Card } from 'antd';
+import {Row, Col, Card } from 'antd';
 
 const colProps = {
   lg: 11,
