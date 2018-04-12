@@ -21,6 +21,7 @@ class ExploratoryDashboard extends Component {
       brand: '',
       models: [],
       selectedModel: '',
+      selectedBrand: false,
       results: []
     }
     this.handleBrandMenuClick = this.handleBrandMenuClick.bind(this)
@@ -30,7 +31,8 @@ class ExploratoryDashboard extends Component {
   handleBrandMenuClick(event) {
     console.log(event.key);
     this.setState({
-      brand: event.key
+      brand: event.key,
+      selectedBrand: true
     })
     this.handleBrandSelection(event.key);
   }
@@ -42,6 +44,13 @@ class ExploratoryDashboard extends Component {
     })
   }
 
+  handleModelMenuClick(event){
+    console.log(event.key);
+    this.setState({
+      selectedModel: event.key
+    })
+  }
+
   render() {
     const brandmenu = (
       <Menu onClick={this.handleBrandMenuClick}>
@@ -50,17 +59,55 @@ class ExploratoryDashboard extends Component {
         <Menu.Item key="Sony">Sony</Menu.Item>
       </Menu>
     );
+    console.log(brandmenu);
+    console.log(this.state.selectedBrand);
+    if (this.state.selectedBrand === false) {
+      return(
+        <div>
+        <Dropdown overlay={brandmenu}>
+          <Button style={{ marginLeft: 8 }}>
+            Choose A Brand <Icon type="down" />
+          </Button>
+        </Dropdown>
+        <Dropdown disabled overlay={brandmenu}>
+        <Button style={{ marginLeft: 8 }}>
+          No Brand Chosen <Icon type="down" />
+        </Button>
+        </Dropdown>
+        <br/>
+        <Row gutter={12}>
+          <Col {...colProps} >
+          <Card title="Phone Strengths">
+              <PhoneStrengths />
+          </Card>
+          </Col>
+          <Col {...colProps}  >
+          <Card title="Phone Weaknesses">
+              <PhoneWeaknesses />
+          </Card>
+          </Col>
+          </Row>
+        </div>
+      )
+    } else if (this.state.selectedBrand === true) {
+      const models = []
+      const modelmenu = {models: this.state.models.map((name, index) => (
+        <Menu.Item key={name} value={name} />
+      ))}
+      for (var mod=0; mod < modelmenu['models'].length; mod++) {
+        models.push(modelmenu['models'][mod]['key'])
+      }
+      console.log(models);
 
-    const modelmenu = {models: this.state.models.map((name, index) => (
-      <Menu.Item key={name} value={name} />
-    ))}
-
-    console.log(modelmenu);
-    console.log(modelmenu['models'])
-    //console.log((modelmenu['models']['0']).key)
-    //console.log(modelmenu['models']['0']['props'])
-    //console.log(modelmenu['models'][0].props['value'])
-    console.log(modelmenu['models'][1])
+      const allmodels = (
+        <Menu onClick={this.handleModelMenuClick}>
+          this.state.models.map(window.name => <Menu.Item key={window.name}>{window.name}</Menu.Item>)
+          {/* models.map(window.name => <Menu.Item key={window.name}>{window.name}</Menu.Item>) */}
+        </Menu>
+        )
+      //var wanted = models.map(name => (console.log(name)));
+      console.log(allmodels);
+    
     return(
       <div>
       <Dropdown overlay={brandmenu}>
@@ -68,6 +115,12 @@ class ExploratoryDashboard extends Component {
           Choose A Brand <Icon type="down" />
         </Button>
       </Dropdown>
+      <Dropdown overlay={allmodels}>
+        <Button style={{ marginLeft: 8 }}>
+          Choose A Brand <Icon type="down" />
+        </Button>
+      </Dropdown>
+      
       <br/>
       <Row gutter={12}>
         <Col {...colProps} >
@@ -83,6 +136,7 @@ class ExploratoryDashboard extends Component {
         </Row>
       </div>
     )
+  }
   }
 }
 
