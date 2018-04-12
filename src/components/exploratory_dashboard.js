@@ -5,6 +5,7 @@ import axios from 'axios';
 import PhoneStrengths from './exploratory/phone_strengths'
 import PhoneWeaknesses from './exploratory/phone_weaknesses';
 import SentimentPostsOverTime from './exploratory/sentiment_post_over_time'
+import Competitors from './exploratory/competitors'
 
 // import styling components
 import { Row, Col, Card, Select } from 'antd';
@@ -21,9 +22,11 @@ class ExploratoryDashboard extends Component {
     state = {
       brand: 'Samsung',
       models: [],
+      selectedModel: '',
       phoneStrength: [],
       phoneWeakness: [],
-      postSentiment: []
+      postSentiment: [],
+      competitors: []
     }
 
   handleBrandSelection = (value) => {
@@ -37,9 +40,11 @@ class ExploratoryDashboard extends Component {
   }
 
   handleModelSelection = (value) => {
+    this.setState({selectedModel: value});
     this.getPhoneStrengthData(value);
     this.getPhoneWeaknessData(value);
     this.getSentimentPostData(value);
+    this.getCompetitors(value);
   }
 
   getPhoneStrengthData = (value) => {
@@ -63,17 +68,24 @@ class ExploratoryDashboard extends Component {
     })
   }
 
+  getCompetitors = (value) => {
+    axios.get(`http://localhost:5132/competitors/${encodeURIComponent(value)}/`)
+    .then(response => {
+      this.setState({competitors: response.data});
+    })
+  }
+
 
 
   render() {
     return(
       <div>
-      <Select value={this.state.brand} style={{ width: 120 }} onSelect={this.handleBrandSelection}>
+      <Select value={this.state.brand} style={{ width: 200 }} onSelect={this.handleBrandSelection}>
       <Option value="Samsung">Samsung</Option>
       <Option value="HTC">HTC</Option>
       <Option value="Google">Google</Option>
       </Select>
-      <Select style={{ width: 120 }} value={this.state.models ? this.state.models[0] : ""} onSelect={this.handleModelSelection}>
+      <Select style={{ width: 200 }} value={this.state.selectedModel} onSelect={this.handleModelSelection}>
       {
         this.state.models.map((item) => (
         <Option key={item} value={item}>{item}</Option>
@@ -98,6 +110,13 @@ class ExploratoryDashboard extends Component {
         </Card>
         </Col>
         </Row>
+        <Row gutter={12}>
+          <Col {...colProps} >
+          <Card title="Competitors">
+              <Competitors results={this.state.competitors} />
+          </Card>
+          </Col>
+          </Row>
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {LineChart, Line, Brush, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
+import moment from 'moment'
 
 class SentimentPostsOverTime extends Component {
 
@@ -15,7 +16,7 @@ class SentimentPostsOverTime extends Component {
     return(
       <LineChart width={1600} height={300} data={sentimentData}
           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-      <XAxis dataKey="date"/>
+      <XAxis dataKey="date" tickFormatter={timeStr => moment(timeStr).format('YYYY/MM/DD')}/>
       <YAxis/>
       <CartesianGrid strokeDasharray="3 3"/>
       <Tooltip/>
