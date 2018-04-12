@@ -6,10 +6,26 @@ import PredictedLikes from './predicted_likes';
 // import styling from material-ui
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import TextField from 'material-ui/TextField';
+import { blue50, blueA100 } from 'material-ui/styles/colors';
 
 // import styling from antd
 import { Select } from 'antd';
 const { Option, OptGroup } = Select;
+
+const styles = {
+  errorStyle: {
+    color: blue50
+  },
+  underlineStyle: {
+    borderColor: blueA100
+  },
+  floatingLabelStyle: {
+    color: blue50
+  },
+  floatingLabelFocusStyle: {
+    color: blue50
+  },
+};
 
 class PredictCaptionLikes extends Component {
   constructor(props) {
@@ -57,7 +73,10 @@ class PredictCaptionLikes extends Component {
         </div>
 
         <TextField
-          hintText="Enter Your Caption Here"
+          floatingLabelText="Enter Your Caption Here"
+          underlineFocusStyle={styles.underlineStyle}
+          floatingLabelStyle={styles.floatingLabelStyle}
+          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           fullWidth={true}
           onChange={this.handleChange}
         />

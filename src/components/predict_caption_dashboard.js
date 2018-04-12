@@ -8,13 +8,13 @@ import PredictCaptionLikes from './caption/predict_caption'
 class PredictCaptionDashboard extends Component {
   render() {
     return(
-      <div>
-      <div className="caption-head">
-        Press 'Enter' after typing Caption to Predict Likes!
-      </div>
-      <div className="caption-body">
-        <PredictCaptionLikes />
-      </div>
+      <div className="body-bg">
+        <div className="caption-head">
+          Press 'Enter' after typing Caption to Predict Likes!
+        </div>
+        <div className="caption-body">
+          <PredictCaptionLikes />
+        </div>
       </div>
     )
   }

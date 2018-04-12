@@ -37,13 +37,25 @@
 }
 
 .body-bg {
-  background-color: seashell;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85)), url("./images/marble.jpg");
 }
 
 .clear {
   clear: both;
+}
+
+.tabs-style {
+  background-color: red !important;
+}
+
+/*********************************Model Insights CSS*******************************************/
+.model-insights {
+  margin: auto;
+  width: 800px;
+  padding-top: 50px;
 }
 
 /************************************Caption CSS**********************************************/
@@ -51,17 +63,22 @@
   margin: auto;
   font-size: 20px;
   font-weight: bold;
+  color: white;
   width: 500px;
-  height: 50px;
 }
 
 .caption-body {
   width: 700px;
   margin: auto;
+  padding-top: 30px;
 }
 
 .caption-body-right {
   float: right
+}
+
+.caption-chart {
+  padding-top: 50px;
 }
 
 @keyframes App-logo-spin {

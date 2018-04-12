@@ -50,31 +50,7 @@ class NavBar extends Component {
       )
     } else if (this.state.current === 'landing') {
       return(
-        <div>
-        <Menu
-          theme="dark"
-          onClick={this.handleClick}
-          selectedKeys={[this.state.current]}
-          style={{ lineHeight: '50px' }}
-          mode="horizontal"
-        >
-        <Menu.Item key="landing">
-          <Icon type="shake" /> Phoneylytics
-        </Menu.Item>
-          <Menu.Item key="exploratory">
-            <Icon type="appstore" />Exploratory
-          </Menu.Item>
-          <Menu.Item key="insights">
-            <Icon type="dot-chart" />Modeling Insights
-          </Menu.Item>
-          <Menu.Item key="caption">
-            <Icon type="bar-chart" />Caption Prediction
-          </Menu.Item>
-        </Menu>
-        <div id="review">
-          <LandingPage />
-        </div>
-        </div>
+        <LandingPage />
       )
     } else if (this.state.current === "exploratory") {
       return(
