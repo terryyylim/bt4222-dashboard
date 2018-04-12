@@ -3,6 +3,7 @@ import { Menu, Icon } from 'antd';
 import ExploratoryDashboard from '../components/exploratory_dashboard';
 import PredictCaptionDashboard from '../components/predict_caption_dashboard';
 import InsightsDashboard from '../components/insights_dashboard';
+import LandingPage from '../components/landing/landing';
 
 class NavBar extends Component {
   constructor(props) {
@@ -28,11 +29,11 @@ class NavBar extends Component {
           <Menu
             theme="dark"
             onClick={this.handleClick}
-            defaultSelectedKeys={['exploratory']}
+            defaultSelectedKeys={['landing']}
             style={{ lineHeight: '50px' }}
             mode="horizontal"
           >
-        <Menu.Item key="menu">
+          <Menu.Item key="landing">
             <Icon type="shake"  /> Phoneylytics
           </Menu.Item>
           <Menu.Item key="exploratory">
@@ -47,6 +48,34 @@ class NavBar extends Component {
           </Menu>
         </span>
       )
+    } else if (this.state.current === 'landing') {
+      return(
+        <div>
+        <Menu
+          theme="dark"
+          onClick={this.handleClick}
+          selectedKeys={[this.state.current]}
+          style={{ lineHeight: '50px' }}
+          mode="horizontal"
+        >
+        <Menu.Item key="landing">
+          <Icon type="shake" /> Phoneylytics
+        </Menu.Item>
+          <Menu.Item key="exploratory">
+            <Icon type="appstore" />Exploratory
+          </Menu.Item>
+          <Menu.Item key="insights">
+            <Icon type="dot-chart" />Modeling Insights
+          </Menu.Item>
+          <Menu.Item key="caption">
+            <Icon type="bar-chart" />Caption Prediction
+          </Menu.Item>
+        </Menu>
+        <div id="review">
+          <LandingPage />
+        </div>
+        </div>
+      )
     } else if (this.state.current === "exploratory") {
       return(
         <div>
@@ -57,7 +86,7 @@ class NavBar extends Component {
           style={{ lineHeight: '50px' }}
           mode="horizontal"
         >
-        <Menu.Item key="menu">
+        <Menu.Item key="landing">
           <Icon type="shake"  /> Phoneylytics
         </Menu.Item>
           <Menu.Item key="exploratory">
@@ -85,7 +114,7 @@ class NavBar extends Component {
           style={{ lineHeight: '50px' }}
           mode="horizontal"
         >
-        <Menu.Item key="menu">
+        <Menu.Item key="landing">
           <Icon type="shake"  /> Phoneylytics
         </Menu.Item>
         <Menu.Item key="exploratory">
@@ -111,7 +140,7 @@ class NavBar extends Component {
           style={{ lineHeight: '50px' }}
           mode="horizontal"
         >
-        <Menu.Item key="menu">
+        <Menu.Item key="landing">
           <Icon type="shake"  /> Phoneylytics
         </Menu.Item>
         <Menu.Item key="exploratory">

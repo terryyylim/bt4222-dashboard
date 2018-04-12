@@ -3,10 +3,12 @@ import React,  { Component } from 'react';
 // import components
 import PredictedLikes from './predicted_likes';
 
+// import styling from material-ui
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import TextField from 'material-ui/TextField';
+
 // import styling from antd
-import { Input } from 'antd';
 import { Select } from 'antd';
-const { TextArea } = Input;
 const { Option, OptGroup } = Select;
 
 class PredictCaptionLikes extends Component {
@@ -28,10 +30,8 @@ class PredictCaptionLikes extends Component {
     })
   }
 
-  handleChange(event, index, value) {
-    console.log(event);
+  handleChange(event, value) {
     console.log(value);
-    console.log(index);
     this.setState({
       text: value
     })
@@ -39,7 +39,8 @@ class PredictCaptionLikes extends Component {
 
   render() {
     return(
-      <div>
+      <div className="caption-body">
+      <MuiThemeProvider>
         <div className="caption-body-right">
         <Select
           defaultValue="Choose a Brand"
@@ -55,10 +56,15 @@ class PredictCaptionLikes extends Component {
         </Select>
         </div>
 
-        <TextArea rows={6} onPressEnter={this.handleChange} />
+        <TextField
+          hintText="Enter Your Caption Here"
+          fullWidth={true}
+          onChange={this.handleChange}
+        />
 
         {/*To pass retrieved props from API call into PredictedLikes*/}
         <PredictedLikes />
+      </MuiThemeProvider>
       </div>
     )
   }

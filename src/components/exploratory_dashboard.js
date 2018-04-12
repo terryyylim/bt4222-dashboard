@@ -117,7 +117,7 @@ class ExploratoryDashboard extends Component {
       </Dropdown>
       <Dropdown overlay={allmodels}>
         <Button style={{ marginLeft: 8 }}>
-          Choose A Brand <Icon type="down" />
+          Choose A Model <Icon type="down" />
         </Button>
       </Dropdown>
       

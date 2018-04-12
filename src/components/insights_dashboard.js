@@ -21,8 +21,8 @@ const cardstyle = {
 class InsightsDashboard extends Component {
   render() {
     return(
-      <div>
-        <Row gutter={10} className="body-bg">
+      <div className="body-bg">
+        <Row gutter={10}>
           <Col {...colProps} >
           <Card className="ant-card-head" style={cardstyle} title="Facebook Features" >
             <FacebookFeature brand={"Samsung"} model={"Samsung Galaxy S7"} />
@@ -34,7 +34,7 @@ class InsightsDashboard extends Component {
           </Card>
           </Col>
         </Row>
-        <Row gutter={10} className="body-bg">
+        <Row gutter={10}>
           <Col {...colProps} >
           <Card className="ant-card-head" style={cardstyle} title="AndroidCentral Features">
             <AndroidCentralFeature />
