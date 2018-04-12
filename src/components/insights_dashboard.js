@@ -1,7 +1,6 @@
 import React,  { Component } from 'react';
 
 // import components
-import PhoneStrengths from './exploratory/phone_strengths'
 import PhoneWeaknesses from './exploratory/phone_weaknesses';
 
 // import styling from antd

@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
+
+// import styling components
 import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 
-
 class PhoneWeaknesses extends Component {
-  state = {
-    model: 'Samsung Galaxy S7',
-    results: []
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      brand: '',
+      model: 'Samsung Galaxy S7',
+      results: []
+    }
   }
 
   componentDidMount() {
@@ -27,8 +33,9 @@ class PhoneWeaknesses extends Component {
     //   ...resultsData,
     //   sentiments: sentiments
     // };
-    console.log(results);
+    //console.log(results);
     return(
+      <div>
       <BarChart width={800} height={300} data={results}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="phrase" />
@@ -37,6 +44,7 @@ class PhoneWeaknesses extends Component {
         <Legend />
         <Bar dataKey="occurrences" fill="#3A91F7" />
       </BarChart>
+      </div>
     )
   }
 }

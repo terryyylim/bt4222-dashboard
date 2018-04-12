@@ -4,7 +4,6 @@ import React,  { Component } from 'react';
 import PredictCaptionLikes from './caption/predict_caption'
 
 // import antd components
-import { Badge } from 'antd'
 
 class PredictCaptionDashboard extends Component {
   render() {

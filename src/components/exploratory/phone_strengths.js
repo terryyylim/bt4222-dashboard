@@ -27,7 +27,7 @@ class PhoneStrengths extends Component {
     //   ...resultsData,
     //   sentiments: sentiments
     // };
-    console.log(results);
+    //console.log(results);
     return(
       <BarChart width={800} height={300} data={results}>
         <CartesianGrid strokeDasharray="3 3" />

@@ -28,8 +28,10 @@ class PredictCaptionLikes extends Component {
     })
   }
 
-  handleChange(e, value) {
+  handleChange(event, index, value) {
+    console.log(event);
     console.log(value);
+    console.log(index);
     this.setState({
       text: value
     })
