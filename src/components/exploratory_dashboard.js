@@ -82,11 +82,14 @@ class ExploratoryDashboard extends Component {
   render() {
     return(
       <div>
+      <br/>
+      <span style={{marginRight:10}}>
       <Select value={this.state.brand} style={{ width: 200 }} onSelect={this.handleBrandSelection}>
       <Option value="Samsung">Samsung</Option>
       <Option value="HTC">HTC</Option>
       <Option value="Google">Google</Option>
       </Select>
+      </span>
       <Select style={{ width: 200 }} value={this.state.selectedModel} onSelect={this.handleModelSelection}>
       {
         this.state.models.map((item) => (
@@ -94,6 +97,7 @@ class ExploratoryDashboard extends Component {
         ))
       }
       </Select>
+      <br/>
       <br/>
       <Col span={24}>
       <Card title="Popularity Over Time">
@@ -125,7 +129,7 @@ class ExploratoryDashboard extends Component {
           </Col>
           <Col {...colProps} >
           <Card title="Boxplot">
-              <BoxPlot results={this.state.competitors} />
+              <BoxPlot results={this.state.phoneStrength} />
           </Card>
           </Col>
           </Row>
