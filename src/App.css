@@ -40,7 +40,7 @@
   width: 100%;
   min-height: 100vh;
   background-size: cover;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85)), url("./images/marble.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.85)), url("./images/phone.jpg");
 }
 
 .clear {
