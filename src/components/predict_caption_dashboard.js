@@ -9,9 +9,6 @@ class PredictCaptionDashboard extends Component {
   render() {
     return(
       <div className="body-bg">
-        <div className="caption-head">
-          Press 'Enter' after typing Caption to Predict Likes!
-        </div>
         <div className="caption-body">
           <PredictCaptionLikes />
         </div>

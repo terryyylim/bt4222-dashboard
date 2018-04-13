@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import ReactChartkick, { ColumnChart } from 'react-chartkick'
-import Chart from 'chart.js'
 
-const options = {
-  title: {
-    display: true,
-    text: 'Predicted Like Counts'
-  }
-}
+// import styling components
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import { MuiThemeProvider } from 'material-ui/styles';
+
 
 class PredictedLikes extends Component {
   constructor(props) {
@@ -15,11 +11,35 @@ class PredictedLikes extends Component {
   }
   
   render() {
-    return(
-      <div className="caption-chart">
-        <ColumnChart options={options} data={[["Facebook", 5], ["Instagram", 27], ["Twitter", 14]]} xtitle="Social Media" ytitle="Like Counts" colors={["#336699"]} />
-      </div>
-    )
+    console.log(this.props);
+    console.log(this.props.facebook)
+    if (this.props.facebook !== undefined) {
+      return(
+        <div className="caption-chart">
+          <MuiThemeProvider>
+          <Card>
+            <CardTitle title="Facebook" subtitle={this.props.facebook.count}>Likes</CardTitle>
+          </Card>
+          <Card>
+            <CardTitle title="Instagram" subtitle={this.props.instagram.count}>Likes</CardTitle>
+          </Card>
+          <Card>
+            <CardTitle title="Twitter" subtitle={this.props.twitter.count}>Retweets</CardTitle>
+          </Card>
+          </MuiThemeProvider>
+        </div>
+      )
+    } else {
+      return (
+        <div className="caption-chart">
+          <MuiThemeProvider>
+          <Card>
+            <CardTitle title="Social Media Prediction Status" subtitle="Choose Your Brand & Enter Your Caption!" />
+          </Card>
+          </MuiThemeProvider>
+        </div>
+      )
+    }
   }
 }
 
