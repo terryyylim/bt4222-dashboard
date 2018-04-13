@@ -9,17 +9,19 @@ class SentimentPostsOverTime extends Component {
     const postData = this.props.results.num_posts
 
     return(
-      <BarChart width={1600} height={300} data={post}
-          margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+    <ComposedChart width={1600} height={300} data={postData}>
      <CartesianGrid strokeDasharray="3 3"/>
      <XAxis dataKey="date"/>
      <YAxis/>
      <Tooltip/>
      <Legend />
+     <Line type='monotone' dataKey='xda' stroke='#ff7300' />
+     <Line type='monotone' dataKey='gsm' stroke='#b21cad' />
+     <Line type='monotone' dataKey='androidcentral' stroke='#413ea0' />
      <Bar dataKey="facebook" stackId="a" fill="#8884d8" />
      <Bar dataKey="instagram" stackId="a" fill="#82ca9d" />
      <Bar dataKey="twitter" stackId="a" fill="#a00020" />
-    </BarChart>
+    </ComposedChart>
     )
   }
 }
