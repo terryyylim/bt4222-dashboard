@@ -8,32 +8,23 @@ addHighchartsMore(Highcharts);
 
 class BoxPlot extends Component {
   render() {
-    if (this.props.sentiments !== undefined) {
       return(
         <div>
           <HighchartsChart>
             <Chart />
-  
-            <Title>Performance over First 20 Levels</Title>
-  
-            <Subtitle>Source: Achievements App</Subtitle>
-  
-            <XAxis categories={this.props.phrases}>
+            <XAxis categories={this.props.results.phrase}>
                 <XAxis.Title>Level</XAxis.Title>
             </XAxis>
-  
-            <YAxis id="boxplot" min="0" max="1200" tickInterval="200" scrollbar="enabled">
+
+            <YAxis id="boxplot" min="-2" max="2" tickInterval="0.2" scrollbar="enabled">
               <YAxis.Title>Phone Features</YAxis.Title>
-              <BoxPlotSeries label="Time Taken" data={this.props.sentiments} />
+              <BoxPlotSeries label="Time Taken" data={this.props.results.sentiments} />
               <Tooltip />
             </YAxis>
           </HighchartsChart>
         </div>
       )
-    } else {
-      return null;
     }
-  }
 }
 
 export default withHighcharts(BoxPlot, Highcharts); // Injecting the Highcharts object

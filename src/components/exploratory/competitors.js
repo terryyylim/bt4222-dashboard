@@ -2,20 +2,44 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import {BarChart, Bar, Brush, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 import moment from 'moment'
+import { Card, Table } from 'antd'
+
+const columns = [{
+  title: 'Model',
+  dataIndex: 'model',
+  key: 'model',
+}, {
+  title: 'GSM',
+  dataIndex: 'gsm',
+  key: 'gsm',
+},
+{
+  title: 'Android Central',
+  dataIndex: 'androidcentral',
+  key: 'androidcentral',
+},
+{
+  title: 'Reddit',
+  dataIndex: 'reddit',
+  key: 'reddit',
+},
+{
+  title: 'XDA',
+  dataIndex: 'xda',
+  key: 'xda',
+},
+{
+  title: 'Total',
+  dataIndex: 'total',
+  key: 'total',
+}
+];
 
 class Competitors extends Component {
 
   render() {
-    console.log(this.props.results)
     return(
-      <BarChart width={800} height={300} data={this.props.results} >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="competitor" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="count" fill="#3A91F7" />
-      </BarChart>
+      <Table dataSource={this.props.results} columns={columns} pagination={{ pageSize: 5 }} />
     )
   }
 }
