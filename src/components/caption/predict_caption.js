@@ -1,12 +1,13 @@
-import React,  { Component } from 'react';
+import React,  { Component } from 'react'
+import axios from 'axios'
 
 // import components
 import PredictedLikes from './predicted_likes';
 
 // import styling from material-ui
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import TextField from 'material-ui/TextField';
-import { blue50, blueA100 } from 'material-ui/styles/colors';
+import TextField from 'material-ui/TextField'
+import { blue50, blueA100 } from 'material-ui/styles/colors'
 
 // import styling from antd
 import { Select } from 'antd';
@@ -33,10 +34,12 @@ class PredictCaptionLikes extends Component {
 
     this.state = {
       brand: "",
-      text: ""
+      text: "",
+      prediction: []
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleClick(value) {
@@ -53,7 +56,21 @@ class PredictCaptionLikes extends Component {
     })
   }
 
+  handleSubmit() {
+    console.log(this.state.brand)
+    console.log(this.state.text)
+    const url = 'http://localhost:5132/predict/'
+    axios.post(url, {
+      brand: this.state.brand,
+      caption: this.state.text
+    })
+    .then(response => {
+      this.setState({prediction: response.data});
+    })
+  }
+
   render() {
+    console.log(this.state.prediction);
     return(
       <div className="caption-body">
       <MuiThemeProvider>
@@ -63,12 +80,12 @@ class PredictCaptionLikes extends Component {
           style={{ width: 200 }}
           onChange={this.handleClick}
         >
-        <Option value="apple">Apple</Option>
-        <Option value="samsung">Samsung</Option>
-        <Option value="google">Google</Option>
-        <Option value="sony">Sony</Option>
-        <Option value="nokia">Nokia</Option>
-        <Option value="huawei">Huawei</Option>
+        <Option value="Apple">Apple</Option>
+        <Option value="Samsung">Samsung</Option>
+        <Option value="Google">Google</Option>
+        <Option value="Sony">Sony</Option>
+        <Option value="Nokia">Nokia</Option>
+        <Option value="Huawei">Huawei</Option>
         </Select>
         </div>
 
@@ -81,8 +98,9 @@ class PredictCaptionLikes extends Component {
           onChange={this.handleChange}
         />
 
+        <div className="landingbutton" onClick={this.handleSubmit}>Get Prediction!</div>
         {/*To pass retrieved props from API call into PredictedLikes*/}
-        <PredictedLikes />
+        <PredictedLikes facebook={this.state.prediction[0]} instagram={this.state.prediction[1]} twitter={this.state.prediction[2]}/>
       </MuiThemeProvider>
       </div>
     )
