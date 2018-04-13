@@ -37,7 +37,11 @@ class ExploratoryDashboard extends Component {
     });
     axios.get('http://localhost:5132/model/' + encodeURIComponent(value))
     .then(response => {
-      this.setState({models: response.data});
+      this.setState({
+        models: response.data,
+        selectedModel: response.data[0]
+      });
+      this.handleModelSelection(this.state.selectedModel);
     })
   }
 
@@ -90,7 +94,6 @@ class ExploratoryDashboard extends Component {
       <Option value="BlackBerry">BlackBerry</Option>
       <Option value="LG">LG</Option>
       <Option value="Huawei">Huawei</Option>
-      <Option value="Nokia">Nokia</Option>
       <Option value="OnePlus">OnePlus</Option>
       <Option value="Sony">Sony</Option>
       <Option value="Xiaomi">Xiaomi</Option>
