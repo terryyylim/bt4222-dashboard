@@ -6,11 +6,17 @@ class PhoneStrengths extends Component {
 
   render() {
     return(
-      <BarChart width={800} height={300} data={this.props.results}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="phrase" />
-        <YAxis />
-        <Tooltip />
+      <BarChart
+        width={700}
+        height={300}
+        data={this.props.results}
+        layout="vertical"
+        margin={{top: 5, right: 30, left: 30, bottom: 5}}
+      >
+        <XAxis type="number"/>
+        <YAxis type="category" dataKey="phrase" />
+        <CartesianGrid strokeDasharray="3 3"/>
+        <Tooltip/>
         <Legend />
         <Bar dataKey="occurrences" fill="#3A91F7" />
       </BarChart>

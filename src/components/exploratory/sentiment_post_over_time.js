@@ -9,7 +9,7 @@ class SentimentPostsOverTime extends Component {
     const sentimentData = this.props.results.map((item) => {
       return{
         date: item.date,
-        posts: item.posts,
+        posts: item.num_posts,
         sentiment: item.sentiment ? item.sentiment[1] * 100 : 0
       }
     });

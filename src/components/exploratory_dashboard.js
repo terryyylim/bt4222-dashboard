@@ -6,6 +6,7 @@ import PhoneStrengths from './exploratory/phone_strengths'
 import PhoneWeaknesses from './exploratory/phone_weaknesses';
 import SentimentPostsOverTime from './exploratory/sentiment_post_over_time'
 import Competitors from './exploratory/competitors'
+import BoxPlot from './exploratory/boxplot'
 
 // import styling components
 import { Row, Col, Card, Select } from 'antd';
@@ -114,6 +115,11 @@ class ExploratoryDashboard extends Component {
           <Col {...colProps} >
           <Card title="Competitors">
               <Competitors results={this.state.competitors} />
+          </Card>
+          </Col>
+          <Col {...colProps} >
+          <Card title="Boxplot">
+              <BoxPlot results={this.state.competitors} />
           </Card>
           </Col>
           </Row>

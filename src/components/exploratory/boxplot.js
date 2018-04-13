@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import {BarChart, Bar, Brush, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
-import moment from 'moment'
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 
-class Competitors extends Component {
+class BoxPlot extends Component {
 
   render() {
-    console.log(this.props.results)
     return(
       <BarChart width={800} height={300} data={this.props.results} >
         <CartesianGrid strokeDasharray="3 3" />
@@ -20,5 +18,4 @@ class Competitors extends Component {
   }
 }
 
-
-export default Competitors; // Injecting the Highcharts object
+export default BoxPlot; // Injecting the Highcharts object
