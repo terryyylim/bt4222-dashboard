@@ -87,7 +87,14 @@ class ExploratoryDashboard extends Component {
       <Select value={this.state.brand} style={{ width: 200 }} onSelect={this.handleBrandSelection}>
       <Option value="Samsung">Samsung</Option>
       <Option value="HTC">HTC</Option>
-      <Option value="Google">Google</Option>
+      <Option value="BlackBerry">BlackBerry</Option>
+      <Option value="LG">LG</Option>
+      <Option value="Huawei">Huawei</Option>
+      <Option value="Nokia">Nokia</Option>
+      <Option value="OnePlus">OnePlus</Option>
+      <Option value="Sony">Sony</Option>
+      <Option value="Xiaomi">Xiaomi</Option>
+      <Option value="ZTE">ZTE</Option>
       </Select>
       </span>
       <Select style={{ width: 200 }} value={this.state.selectedModel} onSelect={this.handleModelSelection}>
