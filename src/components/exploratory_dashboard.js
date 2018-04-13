@@ -28,7 +28,8 @@ class ExploratoryDashboard extends Component {
       phoneStrength: [],
       phoneWeakness: [],
       postSentiment: [],
-      competitors: []
+      competitors: [],
+      brands: []
     }
 
   handleBrandSelection = (value) => {
@@ -51,6 +52,7 @@ class ExploratoryDashboard extends Component {
     this.getPhoneWeaknessData(value);
     this.getSentimentPostData(value);
     this.getCompetitors(value);
+    this.getBrands(value);
   }
 
   getPhoneStrengthData = (value) => {
@@ -81,6 +83,13 @@ class ExploratoryDashboard extends Component {
     })
   }
 
+  getBrands = (value) => {
+    axios.get(`http://localhost:5132/brands/${encodeURIComponent(value)}/`)
+    .then(response => {
+      this.setState({brands: response.data});
+    })
+  }
+
 
 
   render() {
@@ -92,6 +101,7 @@ class ExploratoryDashboard extends Component {
       <Option value="Samsung">Samsung</Option>
       <Option value="HTC">HTC</Option>
       <Option value="BlackBerry">BlackBerry</Option>
+      <Option value="Google">Google</Option>
       <Option value="LG">LG</Option>
       <Option value="Huawei">Huawei</Option>
       <Option value="OnePlus">OnePlus</Option>
@@ -133,13 +143,13 @@ class ExploratoryDashboard extends Component {
         </Row>
         <Row gutter={12}>
           <Col {...colProps} >
-          <Card title="Competitors">
+          <Card title="Competitor Models">
               <Competitors results={this.state.competitors} />
           </Card>
           </Col>
           <Col {...colProps} >
-          <Card title="Boxplot">
-              <BoxPlot results={this.state.phoneStrength} />
+          <Card title="Top Competitor Brands">
+              <BoxPlot results={this.state.brands} />
           </Card>
           </Col>
           </Row>

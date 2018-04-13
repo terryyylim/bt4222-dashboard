@@ -1,30 +1,24 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 
-// import jsx-highcharts
-import { withHighcharts, HighchartsChart, Chart, XAxis, YAxis, Title, Subtitle, Legend, LineSeries, BoxPlotSeries, Tooltip } from 'react-jsx-highcharts';
-import Highcharts from 'highcharts';
-import addHighchartsMore from 'highcharts/highcharts-more';
-addHighchartsMore(Highcharts);
+
 
 class BoxPlot extends Component {
-  render() {
-      return(
-        <div>
-          <HighchartsChart>
-            <Chart />
-            <XAxis categories={this.props.results.phrase}>
-                <XAxis.Title>Level</XAxis.Title>
-            </XAxis>
 
-            <YAxis id="boxplot" min="-2" max="2" tickInterval="0.2" scrollbar="enabled">
-              <YAxis.Title>Phone Features</YAxis.Title>
-              <BoxPlotSeries label="Time Taken" data={this.props.results.sentiments} />
-              <Tooltip />
-            </YAxis>
-          </HighchartsChart>
-        </div>
-      )
-    }
+  render() {
+    return(
+      <BarChart width={700} height={332} data={this.props.results}
+            margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+       <CartesianGrid strokeDasharray="3 3"/>
+       <XAxis dataKey="brand"/>
+       <YAxis/>
+       <Tooltip/>
+       <Legend />
+       <Bar dataKey="count" fill="#8884d8" />
+      </BarChart>
+    )
+  }
 }
 
-export default withHighcharts(BoxPlot, Highcharts); // Injecting the Highcharts object
+export default BoxPlot; // Injecting the Highcharts object

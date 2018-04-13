@@ -39,7 +39,7 @@ class Competitors extends Component {
 
   render() {
     return(
-      <Table dataSource={this.props.results} columns={columns} pagination={{ pageSize: 5 }} />
+      <Table dataSource={this.props.results} columns={columns} pagination={{ pageSize: 4 }} />
     )
   }
 }
