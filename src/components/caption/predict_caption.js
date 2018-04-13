@@ -26,6 +26,9 @@ const styles = {
   floatingLabelFocusStyle: {
     color: blue50
   },
+  inputTextStyle: {
+    color: blue50
+  }
 };
 
 class PredictCaptionLikes extends Component {
@@ -94,6 +97,7 @@ class PredictCaptionLikes extends Component {
           underlineFocusStyle={styles.underlineStyle}
           floatingLabelStyle={styles.floatingLabelStyle}
           floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+          inputStyle={styles.inputTextStyle}
           fullWidth={true}
           onChange={this.handleChange}
         />

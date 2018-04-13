@@ -16,27 +16,36 @@ class PredictedLikes extends Component {
     if (this.props.facebook !== undefined) {
       return(
         <div className="caption-chart">
-          <MuiThemeProvider>
-          <Card>
-            <CardTitle title="Facebook" subtitle={this.props.facebook.count}>Likes</CardTitle>
-          </Card>
-          <Card>
-            <CardTitle title="Instagram" subtitle={this.props.instagram.count}>Likes</CardTitle>
-          </Card>
-          <Card>
-            <CardTitle title="Twitter" subtitle={this.props.twitter.count}>Retweets</CardTitle>
-          </Card>
-          </MuiThemeProvider>
+          <div className="facebook-border">
+            <div className="border-body">
+              <i className="fa fa-facebook-square"></i> 
+              <div className="social-media">Facebook</div>
+              {this.props.facebook.count} Likes
+            </div>
+          </div>
+          <div className="instagram-border">
+            <div className="border-body">
+              <i className="fa fa-instagram"></i> 
+              <div className="social-media">Instagram</div>
+              {this.props.instagram.count} Likes
+            </div>
+          </div>
+          <div className="twitter-border">
+            <div className="border-body">
+              <i className="fa fa-twitter-square"></i> 
+              <div className="social-media">Twitter</div>
+              {this.props.twitter.count} Retweets
+            </div>
+          </div>
         </div>
       )
     } else {
       return (
         <div className="caption-chart">
-          <MuiThemeProvider>
-          <Card>
-            <CardTitle title="Social Media Prediction Status" subtitle="Choose Your Brand & Enter Your Caption!" />
-          </Card>
-          </MuiThemeProvider>
+          <div className="caption-chart-default">
+          <div className="default-caption-header">Social Media Prediction Status</div>
+          Choose Your Brand & Enter Your Caption!
+          </div>
         </div>
       )
     }
