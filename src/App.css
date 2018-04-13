@@ -80,6 +80,57 @@
 .caption-chart {
   padding-top: 50px;
   padding-bottom: 50px;
+  margin: auto;
+}
+
+.caption-chart-default {
+  margin: auto;
+  border-style: dotted;
+  color: #87CEFA;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.facebook-border {
+  border-style: dotted;
+  color: #87CEFA;
+  width: 33%;
+  float: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.instagram-border {
+  border-style: dotted;
+  color:  #87CEFA;
+  width: 33%;
+  float: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.twitter-border {
+  border-style: dotted;
+  color:  #87CEFA;
+  width: 33%;
+  float: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.border-body {
+  color: white;
+}
+
+.social-media {
+  font-weight: bold;
+  color: white;
+}
+
+.default-caption-header {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
 }
 
 @keyframes App-logo-spin {
@@ -100,7 +151,7 @@
   font-size: 50px;
   font-weight: bold;
   position: absolute;
-  color: #7892c2;
+  color: #3A91F7;
   border-radius: 25px;
   top: 50%;
   left: 50%;
@@ -117,12 +168,12 @@
 	-moz-box-shadow: 0px 0px 0px 0px #40e0d0;
 	-webkit-box-shadow: 0px 0px 0px 0px #40e0d0;
 	box-shadow: 0px 0px 0px 0px #40e0d0;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
-	background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
-	background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
-	background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
-	background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3A91F7), color-stop(1, #3A91F7));
+	background:-moz-linear-gradient(top, #3A91F7 5%, #476e9e 100%);
+	background:-webkit-linear-gradient(top, #3A91F7 5%, #476e9e 100%);
+	background:-o-linear-gradient(top, #3A91F7 5%, #476e9e 100%);
+	background:-ms-linear-gradient(top, #3A91F7 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #3A91F7 5%, #476e9e 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
 	background-color:#7892c2;
 	-moz-border-radius:25px;
