@@ -5,6 +5,7 @@ import axios from 'axios';
 import PhoneStrengths from './exploratory/phone_strengths'
 import PhoneWeaknesses from './exploratory/phone_weaknesses';
 import SentimentPostsOverTime from './exploratory/sentiment_post_over_time'
+import SentimentPostsOverTimeTwo from './exploratory/sentiment_post_over_time2'
 import Competitors from './exploratory/competitors'
 import BoxPlot from './exploratory/boxplot'
 
@@ -95,8 +96,13 @@ class ExploratoryDashboard extends Component {
       </Select>
       <br/>
       <Col span={24}>
-      <Card title="Sentiment and Posts Over Time">
+      <Card title="Popularity Over Time">
           <SentimentPostsOverTime results={this.state.postSentiment}/>
+      </Card>
+      </Col>
+      <Col span={24}>
+      <Card title="Sentiment Over Time">
+          <SentimentPostsOverTimeTwo results={this.state.postSentiment}/>
       </Card>
       </Col>
       <Row gutter={12}>

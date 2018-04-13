@@ -3,11 +3,18 @@ import axios from 'axios'
 import {ComposedChart, BarChart, LineChart, Bar, Line, Brush, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 import moment from 'moment'
 
-class SentimentPostsOverTime extends Component {
+class SentimentPostsOverTimeTwo extends Component {
 
   render() {
-    const postData = this.props.results.num_posts
-
+    console.log(this.props.results)
+    const postData = this.props.results.sentiments ? this.props.results.sentiments.map((item) => {
+      return{
+        date: item.date,
+        gsm: item.gsm ? item.gsm[1] * 100 : 0,
+        androidcentral: item.androidcentral ? item.androidcentral[1] * 100 : 0,
+        xda: item.xda ? item.xda[1] * 100 : 0
+      }
+    }) : [];
     return(
     <ComposedChart width={1600} height={300} data={postData}>
      <CartesianGrid strokeDasharray="3 3"/>
@@ -18,12 +25,9 @@ class SentimentPostsOverTime extends Component {
      <Line type='monotone' dot={false} activedot={false} dataKey='xda' stroke='#ff7300' />
      <Line type='monotone' dot={false} activedot={false} dataKey='gsm' stroke='#b21cad' />
      <Line type='monotone' dot={false} activedot={false} dataKey='androidcentral' stroke='#413ea0' />
-     <Bar dataKey="facebook" stackId="a" fill="#8884d8" />
-     <Bar dataKey="instagram" stackId="a" fill="#82ca9d" />
-     <Bar dataKey="twitter" stackId="a" fill="#a00020" />
     </ComposedChart>
     )
   }
 }
 
-export default SentimentPostsOverTime; // Injecting the Highcharts object
+export default SentimentPostsOverTimeTwo; // Injecting the Highcharts object
