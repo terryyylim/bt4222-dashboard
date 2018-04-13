@@ -101,7 +101,7 @@ class PredictCaptionLikes extends Component {
           fullWidth={true}
           onChange={this.handleChange}
         />
-
+        <br/> <br/>
         <div className="landingbutton" onClick={this.handleSubmit}>Get Prediction!</div>
         {/*To pass retrieved props from API call into PredictedLikes*/}
         <PredictedLikes facebook={this.state.prediction[0]} instagram={this.state.prediction[1]} twitter={this.state.prediction[2]}/>
